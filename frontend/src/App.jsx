@@ -3,7 +3,7 @@ import axios from 'axios';
 import { CheckCircle, Circle, Trash2, Plus, Edit3, Loader2 } from 'lucide-react'; 
 
 // set base URL
-const API_BASE_URL = 'http://localhost:3000/tasks'; 
+const API_BASE_URL = 'https://todo-app-production-a911.up.railway.app/tasks'; 
 
 // Components
 
