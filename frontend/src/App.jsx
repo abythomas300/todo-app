@@ -208,7 +208,11 @@ const App = () => {
     setLoading(true);
     try {
       const response = await axios.post(API_BASE_URL, { title });
-      setTasks(prevTasks => [...prevTasks, response.data]); 
+      if(response.status === 201){
+        console.log("Response: ", response) // for test
+        setTasks(prevTasks => [...prevTasks, title]);
+        fetchTasks() //Get all tasks from API right after write operation
+      }
     } catch (err) {
       console.error("Error creating task:", err);
       setError("Failed to create task.");
