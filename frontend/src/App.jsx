@@ -225,8 +225,10 @@ const App = () => {
   // To delete a task
   const deleteTask = async (taskId) => {
     try {
+      setLoading(true)
       await axios.delete(`${API_BASE_URL}/${taskId}`);
       setTasks(prevTasks => prevTasks.filter(task => task.id !== taskId));
+      setLoading(false)
     } catch (err) {
       console.error("Error deleting task:", err);
       setError("Failed to delete task.");
